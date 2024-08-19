@@ -3,7 +3,7 @@
 
 !["Image not found"](./images/network.png)
 
-Se levantan dos docker que estan conectados entre si, uno debian y el otro vault, el sistema debian contara con usuarios, grupos, contraseñas y estara habilitado el servicio ssh para que cada usuario pueda conectarse ya sea mediante su contraseña o su clave id_rsa la cual se encuantra en la carpeta de cada usuario.
+Se levantan dos contenedores Docker que están conectados entre sí: uno con Debian y otro con Vault. El sistema Debian contará con usuarios, grupos y contraseñas, y tendrá habilitado el servicio SSH para que cada usuario pueda conectarse, ya sea mediante su contraseña o usando su clave "id_rsa", la cual se encuentra en la carpeta de cada usuario.
 
 Los grupos creados y los usuarios son los siguientes:
 
@@ -13,9 +13,9 @@ Los grupos creados y los usuarios son los siguientes:
 
 **Supports:** Ramiro, Camila, Hector
 
-Las contraseñas seguras son generadas con `pwgen` con una longitud de 12 caracteres. Los usuarios y contraseñas son enviadas al vault donde son guardadas en diferentes secrets con los nombres pertenecientes a cada grupo.
+Las contraseñas seguras son generadas con `pwgen`, con una longitud de 12 caracteres. Los usuarios y contraseñas se envían a Vault, donde se guardan en diferentes "Secret", cada uno con el nombre correspondiente a su grupo.
 
-## Demostracion
+## Demostración
 
 Creamos las imagenes:
 
@@ -55,4 +55,4 @@ Ahora vamos a acceder al usuario "Cristian" mediante ssh.
 
 !["Image not found"](./images/ssh_cristian.png)
 
-Tambien se puede acceder mediante el uso de la id_rsa que se encuentra en la carpeta .ssh en la carpeta de cada usuario, esto nos permitira conectarnos sin que te pidan contraseña.
+Tambien se puede acceder mediante el uso de la "id_rsa" que se encuentra en la carpeta ".ssh" perteneciente a cada usuario, esto nos permitira conectarnos sin que te pidan contraseña.
